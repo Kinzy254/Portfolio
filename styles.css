@@ -1,0 +1,28 @@
+/*====================================
+  Styles for the portfolio website
+====================================*/
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL VARIABLES */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --light-bg: #f4f4f4;
+    --dark-bg: #222;
+    --text-light-color: #fff;
+    --text-dark-color: #333;
+    --shadow-light-bg: rgba(0, 0, 0, 0.1);
+    --shadow-dark-bg: rgba(0, 0, 0, 0.5);
+    --white: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
