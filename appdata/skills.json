@@ -1,0 +1,129 @@
+{
+    "intro-text": [
+        "creative brands", "eye-catching graphics", "modern interfaces", 
+        "engaging websites", "clean data insights", "automation scripts", 
+        "efficient virtual assistance", "excellent customer relations"
+        ],
+
+    "skills": {
+        "virtual-assistance": {
+            "name": "virtual assistance",
+            "proficiency": "94%",
+            "description": "End-to-end admin, inbox, calendar, CRM and operations support so you focus on growth.",
+            "capabilities": [
+                "Administrative support", "Calendar & schedule management", 
+                "Email management", "Appointment booking", "Customer support", 
+                "Data entry", "Internet research", "Travel planning", 
+                "File & document organization", "Social media management", 
+                "CRM management", "Lead generation", "Project coordination", 
+                "Meeting scheduling", "Chat & email support", "Executive assistance", 
+                "Inbox management", "Microsoft Office Suite", "Google Workspace", 
+                "Communication management", "Task management", "Online business support", 
+                "E-commerce support", "Report preparation", "Virtual team coordination", 
+                "Client relationship management"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "graphic-design": {
+            "name": "graphic design",
+            "proficiency": "84%",
+            "description": "Logos, brand identity, social graphics, thumbnails and marketing assets that convert.",
+            "capabilities": [
+                "Logo design", "Banner design", "Social media graphics", 
+                "YouTube thumbnails", "Business cards", "Flyers & posters", 
+                "Letterhead design", "Brand identity", "Presentation design", 
+                "Infographics", "Video editing", "Photo editing", 
+                "Marketing materials", "Ul mockups", "Creative ad graphics" 
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "customer-service": {
+            "name": "customer service",
+            "proficiency": "96%",
+            "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
+            "capabilities": [
+                "Customer communication", "Client support", "Problem resolution",
+                "Call handling", "Chat support", "Email support",
+                "Conflict resolution", "CRM tools", "Customer retention",
+                "Professional communication", "Multitasking",
+                "Technical support assistance"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "data-analysis": {
+            "name": "data analysis & reporting",
+            "proficiency": "95%",
+            "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
+            "capabilities": [
+                "Advanced Excel", "Data cleaning", "Data visualization", 
+                "Dashboard creation", "Python for data analysis",
+                "QuickBooks", "Financial reporting", 
+                "Spreadsheet automation", "SQL basics", 
+                "Data reporting", "Business insights", 
+                "Statistical analysis", "Power BI / Tableau", 
+                "KPI tracking", "Reporting automation"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "frontend-development": {
+            "name": "frontend development",
+            "proficiency": "90%",
+            "description": "Pixel-perfect, fast, responsive React + Tailwind websites and landing pages.",
+            "capabilities": [
+                "HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS", 
+                "Bootstrap", "Responsive web design", "UI/UX implementation", 
+                "API integration", "Website optimization", "Landing pages", 
+                "Portfolio websites", "Business websites", "Interactive interfaces", 
+                "Git & GitHub"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "python-programming": {
+            "name": "python programming",
+            "proficiency": "85%",
+            "description": "Scripts, web scraping, data pipelines and APIs that save hours every week.",
+            "capabilities": [
+                "Automation scripts", "Data processing", "Web scraping", 
+                "REST APIS", "Backend scripting", "Python applications", 
+                "Data analytics", "Task automation", "File handling", 
+                "Flask / Django basics", "Problem solving with Python"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        }
+    }
+}

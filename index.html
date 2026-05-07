@@ -3,80 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Charles Kinzi</title>
+    <title>Portfolio — Charles Kinzi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- HEADER -->
     <header class="header" id="home">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+            <span></span><span></span><span></span>
+        </button>
         <div class="logo-div">
-            <img src="images/Passport.png" width="40" height="40" alt="logo">
-            <p>Charles Kinzi</p>
+            <div class="logo-initials">CK</div>
+            <div class="my-name">
+                <p class="superscript">This... is</p>
+                <p class="name-text">CHARLES KINZI</p>
+            </div>
         </div>
-        <div class="nav-menu">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Skills</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Portfolio</a></li>
-                    <li><a href="">Experience</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="header-cta">
+            <a href="#contact-section" class="header-hire-btn">Hire Me</a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="availaibility-statement">
-                <p>Available for freelance & remote work</p>
-            </div>
-            <div class="intro">
-                <p>I build "varying sevices here for animation"</p>
-            </div>
-        <!--fill div-->
-            <div class="hero-services">
-                <p>loading services...</p>
-            </div>
-            <div class="hero-actions">
-                <button>Book service</button>
-                <button>View portfolio</button>
-                <button>Resume</button>
-            </div>
-            <div class="hero-socials-icons">
-                <img src="" alt="linkedIn" width="20" height="20">
-                <img src="" alt="Github" width="20" height="20">
-                <img src="" alt="Email" width="20" height="20">
-                <a href="">Behance</a>
-                <a href="">Upwork</a>
-                <a href="">Fiverr</a>
-            </div>
-            <div class="hero-experience-cards">
-                <!--later idea
-                5+ years exp | 60+ projects | 40+ clients
-                -->
-            </div>
-        </section>
+    <main class="main-grid">
 
-        <section class="about-me" id="about-me-section">
-            <h4>About me</h4>
-            <div class="about-me-content">
-                <p class="about-me-content-header">
-                    A multi-skilled digital professional
+        <!-- SIDEBAR -->
+        <div class="sidebar-grid" id="sidebar">
+            <section class="navigation-menu">
+                <nav class="sidebar">
+                    <div class="nav-menu-list">
+                        <a href="#home" class="nav-link active" data-section="home">
+                            <span class="nav-icon">⌂</span>
+                            <span class="nav-label">Home</span>
+                        </a>
+                        <a href="#about-me-section" class="nav-link" data-section="about-me-section">
+                            <span class="nav-icon">◉</span>
+                            <span class="nav-label">About</span>
+                        </a>
+                        <a href="#skills-section" class="nav-link" data-section="skills-section">
+                            <span class="nav-icon">◈</span>
+                            <span class="nav-label">Skills</span>
+                        </a>
+                        <a href="#services-section" class="nav-link" data-section="services-section">
+                            <span class="nav-icon">◎</span>
+                            <span class="nav-label">Services</span>
+                        </a>
+                        <a href="#portfolio-section" class="nav-link" data-section="portfolio-section">
+                            <span class="nav-icon">◰</span>
+                            <span class="nav-label">Portfolio</span>
+                        </a>
+                        <a href="#contact-section" class="nav-link" data-section="contact-section">
+                            <span class="nav-icon">◌</span>
+                            <span class="nav-label">Contact</span>
+                        </a>
+                    </div>
+                    <div class="sidebar-footer">
+                        <span>© 2025</span>
+                    </div>
+                </nav>
+            </section>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content-grid">
+
+            <!-- HERO -->
+            <section class="hero" id="hero-section">
+                <div class="availability-statement">
+                    <span class="dot-active"></span>
+                    <p>Available for freelance & remote work</p>
+                </div>
+
+                <div class="intro">
+                    <p class="intro-static">I build&nbsp;</p>
+                    <p class="intro-text"></p>
+                    <span class="cursor">|</span>
+                </div>
+
+                <p class="hero-tagline">
+                    Virtual Assistant · Frontend Developer · Graphic Designer · Data Analyst · Python Programmer
                 </p>
-                <p>I am a BSc. Telecommunication graduate with a passion 
-                    of building efficient digital workflows, beautiful 
-                    interfaces and insightful data stories. Over the years, 
-                    I've combined technical expertise, creativity and organisation 
-                    to support founders, executives and growing teams across 
-                    the globe. </p>
-                <p>My work is anchored in problem-solving, 
-                    multitasking and most importantly client satisfaction.               
-                </p>
-                <button class="download-cv-btn">Download CV</button>
-            </div>
-        </section>
+                <p class="hero-sub">I help businesses run smoother and look sharp.</p>
+
+                <div class="hero-actions">
+                    <a href="#contact-section" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                        Book a Service
+                    </a>
+                    <a href="#portfolio-section" class="btn btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        View Portfolio
+                    </a>
+                    <a href="#" class="btn btn-ghost" id="downloadCvBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Resume
+                    </a>
+                </div>
+
+                <div class="hero-socials-icons">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                    <a href="mailto:charles@example.com" class="social-link" title="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-link social-text">Behance</a>
+                    <a href="https://upwork.com" target="_blank" rel="noopener noreferrer" class="social-link social-text">Upwork</a>
+                    <a href="https://fiverr.com" target="_blank" rel="noopener noreferrer" class="social-link social-text">Fiverr</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-num">5+</span>
+                        <span class="stat-label">Years Exp.</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-card">
+                        <span class="stat-num">60+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-card">
+                        <span class="stat-num">40+</span>
+                        <span class="stat-label">Clients</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="about-me reveal" id="about-me-section">
+                <div class="section-label">ABOUT ME</div>
+                <h2 class="section-heading">A multi-skilled<br><em>digital professional</em></h2>
+                <div class="about-me-content">
+                    <p>I am a BSc. Telecommunication graduate with a passion for building efficient digital workflows, beautiful interfaces and insightful data stories. Over the years, I've combined technical expertise, creativity and organisation to support founders, executives and growing teams across the globe.</p>
+                    <p>My work is anchored in problem-solving, multitasking and most importantly — client satisfaction. Whether it's a polished design, a clean dataset or a smoothly running operation, I bring precision and care to every engagement.</p>
+                </div>
+                <button class="btn btn-primary" id="aboutDownloadBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download CV
+                </button>
+            </section>
+
+            <!-- SKILLS -->
+            <section class="skills-section reveal" id="skills-section">
+                <div class="section-label">SKILLS</div>
+                <h2 class="section-heading">What I'm <em>good at</em></h2>
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- SERVICES -->
+            <section class="services-section reveal" id="services-section">
+                <div class="section-label">SERVICES</div>
+                <h2 class="section-heading">How I can <em>help you</em></h2>
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- PORTFOLIO -->
+            <section class="portfolio-section reveal" id="portfolio-section">
+                <div class="section-label">PORTFOLIO</div>
+                <h2 class="section-heading">Recent <em>work</em></h2>
+                <div class="portfolio-filter" id="portfolioFilter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                    <button class="filter-btn" data-filter="data">Data</button>
+                    <button class="filter-btn" data-filter="va">Virtual Assistance</button>
+                </div>
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="contact-section reveal" id="contact-section">
+                <div class="section-label">CONTACT</div>
+                <h2 class="section-heading">Let's <em>work together</em></h2>
+                <p class="contact-sub">Have a project in mind? I'd love to hear about it. Drop me a message and I'll get back to you within 24 hours.</p>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">✉</span>
+                            <div>
+                                <span class="contact-item-label">Email</span>
+                                <a href="mailto:kinzicharles@gmail.com" class="contact-item-value">kinzicharles@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <span class="contact-item-label">Location</span>
+                                <span class="contact-item-value">Nairobi, Kenya</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">⏱</span>
+                            <div>
+                                <span class="contact-item-label">Response Time</span>
+                                <span class="contact-item-value">Within 24 hours</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <div>
+                                <span class="contact-item-label">Availability</span>
+                                <span class="contact-item-value">Open to remote &amp; freelance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactService">Service</label>
+                            <select id="contactService">
+                                <option value="">Select a service…</option>
+                                <option>Virtual Assistance</option>
+                                <option>Graphic Design</option>
+                                <option>Frontend Development</option>
+                                <option>Data Analysis</option>
+                                <option>Python Programming</option>
+                                <option>Customer Service</option>
+                                <option>Other: Describe in the message</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="4" placeholder="Tell me about your project…" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">
+                            Send Message
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            ✓ Message sent! I'll be in touch soon.
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+                <p>Designed & built by <strong>Charles Kinzi</strong> · 2025</p>
+            </footer>
+
+        </div>
     </main>
+
+    <script src="script.js"></script>
+    <script src="functions.js"></script>
 </body>
 </html>
