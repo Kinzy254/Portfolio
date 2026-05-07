@@ -375,19 +375,25 @@ function initPortfolio() {
    7. CONTACT FORM
 ───────────────────────────────────────── */
 /* =====================================================
-   Contact Form — Real submission to /api/contact
+   Contact Form — Email (Resend) + WhatsApp dual delivery
+   Replace initContactForm() in script.js with this.
    ===================================================== */
 
+// ── Your WhatsApp number in international format, no + or spaces
+// e.g. Kenyan number 0712 345 678 → 254712345678
+const WHATSAPP_NUMBER = '254750205940'; // ← replace with your real number
+
 function initContactForm() {
-    const form       = document.getElementById('contactForm');
-    const success    = document.getElementById('formSuccess');
-    const submitBtn  = form?.querySelector('button[type="submit"]');
+    const form      = document.getElementById('contactForm');
+    const success   = document.getElementById('formSuccess');
+    const submitBtn = form?.querySelector('button[type="submit"]');
     if (!form || !success || !submitBtn) return;
+
+    injectSpinnerStyle();
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Collect form values
         const payload = {
             name:    document.getElementById('contactName')?.value.trim(),
             email:   document.getElementById('contactEmail')?.value.trim(),
@@ -395,60 +401,111 @@ function initContactForm() {
             message: document.getElementById('contactMessage')?.value.trim(),
         };
 
-        // Client-side guard
         if (!payload.name || !payload.email || !payload.message) {
-            showError(form, 'Please fill in all required fields.');
+            showFormError(form, 'Please fill in all required fields.');
             return;
         }
 
-        // Loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                style="animation: spin 1s linear infinite;">
-                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
-            </svg>
-            Sending…
-        `;
+        setButtonLoading(submitBtn, true);
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-            });
+        // ── Run email + WhatsApp concurrently ──
+        const [emailResult] = await Promise.allSettled([
+            sendEmail(payload),
+            openWhatsApp(payload),  // non-blocking, opens new tab immediately
+        ]);
 
-            const data = await response.json();
+        setButtonLoading(submitBtn, false);
 
-            if (!response.ok) {
-                throw new Error(data.error || 'Something went wrong.');
-            }
-
-            // ✅ Success
+        if (emailResult.status === 'fulfilled') {
             form.reset();
-            success.textContent = '✓ Message sent! I\'ll be in touch within 24 hours.';
-            success.classList.add('show');
-            setTimeout(() => success.classList.remove('show'), 6000);
-
-        } catch (err) {
-            // ❌ Error
-            showError(form, err.message || 'Failed to send. Please email me directly.');
-        } finally {
-            // Restore button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = `
-                Send Message
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="22" y1="2" x2="11" y2="13"/>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-            `;
+            showFormSuccess(success, '✓ Message sent! Check the WhatsApp tab to complete your enquiry.');
+        } else {
+            // Email failed but WhatsApp tab still opened — give useful fallback message
+            console.error('Email error:', emailResult.reason);
+            showFormError(form, 'Email delivery failed — please complete your enquiry via the WhatsApp tab that just opened.');
         }
     });
 }
 
-/* Show an inline error message below the form */
-function showError(form, message) {
+/* ─────────────────────────────────────────
+   Email via /api/contact (Resend)
+───────────────────────────────────────── */
+async function sendEmail(payload) {
+    const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Email send failed.');
+    return data;
+}
+
+/* ─────────────────────────────────────────
+   WhatsApp — builds wa.me deep link and
+   opens it in a new tab (fire-and-forget)
+───────────────────────────────────────── */
+function openWhatsApp(payload) {
+    const { name, email, service, message } = payload;
+
+    const lines = [
+        `👋 *New Portfolio Enquiry*`,
+        ``,
+        `*Name:* ${name}`,
+        `*Email:* ${email}`,
+        service ? `*Service:* ${service}` : null,
+        ``,
+        `*Message:*`,
+        message,
+    ].filter(line => line !== null);
+
+    const text = lines.join('\n');
+    const url  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+
+    return Promise.resolve(); // always succeeds from JS's perspective
+}
+
+/* ─────────────────────────────────────────
+   UI helpers
+───────────────────────────────────────── */
+function setButtonLoading(btn, isLoading) {
+    btn.disabled = isLoading;
+    btn.innerHTML = isLoading
+        ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               style="animation:spin 1s linear infinite">
+               <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+           </svg>
+           Sending…`
+        : `Send Message
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <line x1="22" y1="2" x2="11" y2="13"/>
+               <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+           </svg>`;
+}
+
+function showFormSuccess(el, msg) {
+    el.textContent = msg;
+    el.style.cssText = `
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #00a07a;
+        background: #d6f8ef;
+        border: 1px solid #a3edda;
+        border-radius: 8px;
+        padding: 0.65rem 1rem;
+        margin-top: 0.5rem;
+        text-align: center;
+    `;
+    setTimeout(() => {
+        el.style.display = 'none';
+        el.textContent = '';
+    }, 7000);
+}
+
+function showFormError(form, message) {
     let errEl = form.querySelector('.form-error');
     if (!errEl) {
         errEl = document.createElement('p');
@@ -466,17 +523,16 @@ function showError(form, message) {
         form.appendChild(errEl);
     }
     errEl.textContent = '⚠ ' + message;
-    setTimeout(() => errEl?.remove(), 6000);
+    setTimeout(() => errEl?.remove(), 7000);
 }
 
-/* CSS for the spinner — inject once */
-(function injectSpinnerStyle() {
+function injectSpinnerStyle() {
     if (document.getElementById('spinner-style')) return;
     const style = document.createElement('style');
     style.id = 'spinner-style';
     style.textContent = `@keyframes spin { to { transform: rotate(360deg); } }`;
     document.head.appendChild(style);
-})();
+}
 
 /* ─────────────────────────────────────────
    8. CV DOWNLOAD BUTTONS

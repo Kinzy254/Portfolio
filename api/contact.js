@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
     try {
         const { data, error } = await resend.emails.send({
-            from: 'Portfolio Contact <onboarding@portfolio.com>', // ← use your verified domain later
+            from: 'Portfolio Contact <charleskinzi@portfolio.com>', // ← use your verified domain later
             to: YOUR_EMAIL,
             replyTo: email,
             subject: `New enquiry${service ? ` — ${service}` : ''} from ${name}`,
