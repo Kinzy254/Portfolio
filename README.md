@@ -2,7 +2,7 @@
 
 A clean, modern, and responsive personal portfolio website designed to showcase my software development projects, skills, and professional journey. 
 
-🌐 **Live Demo Link:**   [Portfolio - Kinzi Charles](https://kinzycharles.vercel.app)
+🌐 **Live Demo Link:**   [Portfolio - Kinzi Charles](https://kinzicharles.vercel.app)
 
 ## 🚀 Features
 
