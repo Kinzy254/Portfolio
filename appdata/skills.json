@@ -1,14 +1,34 @@
 {
     "intro-text": [
-        "creative brands", "eye-catching graphics", "modern interfaces", 
-        "engaging websites", "clean data insights", "automation scripts", 
-        "efficient virtual assistance", "excellent customer relations"
+        "AI & Automation workflows", "workflow automation scripts", 
+        "modern dashboards/interfaces", "clean data insights",
+        "engaging websites", "landing pages that convert", 
+        "& provide technical virtual assistance", "excellent customer relations"
         ],
 
     "skills": {
+        "ai-automation": {
+            "name": "AI & workflow automation",
+            "proficiency": "95%",
+            "description": "Smart AI agents, custom API integrations, and automated workflows that eliminate manual work.",
+            "capabilities": [
+                "Workflow automation", "AI agent integration", "API connections", 
+                "Make.com / Zapier setups", "Custom chatbots", "LLM implementation", 
+                "Process optimization", "Automated email flows", "Data pipeline automation", 
+                "CRM workflow sync", "AI-powered data extraction", "Scheduled tasks", 
+                "Webhook integration", "No-code / low-code automation"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
         "virtual-assistance": {
             "name": "virtual assistance",
-            "proficiency": "94%",
+            "proficiency": "99%",
             "description": "End-to-end admin, inbox, calendar, CRM and operations support so you focus on growth.",
             "capabilities": [
                 "Administrative support", "Calendar & schedule management", 
@@ -32,14 +52,14 @@
 
         "graphic-design": {
             "name": "graphic design",
-            "proficiency": "84%",
+            "proficiency": "95%",
             "description": "Logos, brand identity, social graphics, thumbnails and marketing assets that convert.",
             "capabilities": [
-                "Logo design", "Banner design", "Social media graphics", 
+                "Ul mockups", "Logo design", "Banner design", "Social media graphics", 
                 "YouTube thumbnails", "Business cards", "Flyers & posters", 
                 "Letterhead design", "Brand identity", "Presentation design", 
                 "Infographics", "Video editing", "Photo editing", 
-                "Marketing materials", "Ul mockups", "Creative ad graphics" 
+                "Marketing materials", "Creative ad graphics" 
             ],
             "porfolio": [{
                 "title": "",
@@ -51,14 +71,13 @@
 
         "customer-service": {
             "name": "customer service",
-            "proficiency": "96%",
+            "proficiency": "99%",
             "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
             "capabilities": [
-                "Customer communication", "Client support", "Problem resolution",
+                "Customer communication", "Technical support assistance", "Problem resolution",
                 "Call handling", "Chat support", "Email support",
                 "Conflict resolution", "CRM tools", "Customer retention",
-                "Professional communication", "Multitasking",
-                "Technical support assistance"
+                "Professional communication", "Multitasking"
             ],
             "porfolio": [{
                 "title": "",
@@ -70,7 +89,7 @@
 
         "data-analysis": {
             "name": "data analysis & reporting",
-            "proficiency": "95%",
+            "proficiency": "98%",
             "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
             "capabilities": [
                 "Advanced Excel", "Data cleaning", "Data visualization", 
@@ -110,7 +129,7 @@
 
         "python-programming": {
             "name": "python programming",
-            "proficiency": "85%",
+            "proficiency": "99%",
             "description": "Scripts, web scraping, data pipelines and APIs that save hours every week.",
             "capabilities": [
                 "Automation scripts", "Data processing", "Web scraping", 

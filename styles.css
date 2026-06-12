@@ -115,10 +115,9 @@ input, select, textarea { font-family: inherit; }
 }
 
 .logo-initials {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 12px;
-    background: var(--color-primary);
     color: white;
     font-family: 'DM Serif Display', serif;
     font-size: 1rem;
@@ -130,13 +129,13 @@ input, select, textarea { font-family: inherit; }
 
 .my-name { line-height: 1.2; }
 .superscript {
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     color: var(--text-xlight);
     font-style: italic;
     letter-spacing: 0.04em;
 }
 .name-text {
-    font-size: 0.92rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--color-primary);
     letter-spacing: 0.06em;
@@ -496,6 +495,13 @@ section:last-of-type { border-bottom: none; }
     font-size: 0.95rem;
     max-width: 650px;
     margin-bottom: 2rem;
+}
+
+.about_photo {
+    float: right; 
+    margin-left: 0px; 
+    max-width: 500px;
+
 }
 
 /* ── Skills ── */

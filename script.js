@@ -1,9 +1,6 @@
-/* =====================================================
-   Portfolio — Charles Kinzi
-   Main Script
-   ===================================================== */
+/* Portfolio Main Script
 
-/* ── DOM Ready ── */
+/* ── DOM Ready? ── */
 document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initHamburger();
@@ -15,23 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
 });
 
-/* ─────────────────────────────────────────
-   1. TYPING EFFECT
-───────────────────────────────────────── */
+/* 1. TYPING EFFECT */
+
 function initTypingEffect() {
     const introText = document.querySelector('.intro-text');
     if (!introText) return;
 
     const phrases = [
-        "creative brands",
-        "eye-catching graphics",
-        "modern interfaces",
-        "engaging websites",
-        "clean data insights",
-        "automation scripts",
-        "efficient workflows",
-        "beautiful experiences"
-    ];
+        "AI & Automation workflows", "workflow automation scripts", 
+        "modern dashboards/interfaces", "clean data insights",
+        "engaging websites", "landing pages that convert", 
+        "& provide technical virtual assistance", "excellent customer relations"
+        ];
 
     let phraseIndex = 0;
     let charIndex = 0;
@@ -66,9 +58,8 @@ function initTypingEffect() {
     type();
 }
 
-/* ─────────────────────────────────────────
-   2. HAMBURGER MENU
-───────────────────────────────────────── */
+/* 2. HAMBURGER MENU */
+
 function initHamburger() {
     const btn = document.getElementById('hamburgerBtn');
     const sidebar = document.getElementById('sidebar');
@@ -101,9 +92,8 @@ function initHamburger() {
     });
 }
 
-/* ─────────────────────────────────────────
-   3. SCROLL SPY — highlight active nav
-───────────────────────────────────────── */
+/* 3. SCROLL SPY — highlight active nav */
+
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id], .hero[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -122,9 +112,8 @@ function initScrollSpy() {
     sections.forEach(s => observer.observe(s));
 }
 
-/* ─────────────────────────────────────────
-   4. REVEAL ON SCROLL
-───────────────────────────────────────── */
+/* 4. REVEAL ON SCROLL */
+
 function initReveal() {
     const els = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -138,16 +127,17 @@ function initReveal() {
     els.forEach(el => observer.observe(el));
 }
 
-/* ─────────────────────────────────────────
-   5. SKILLS + SERVICES (from skills.json)
-───────────────────────────────────────── */
+/* 5. SKILLS + SERVICES (from skills.json) */
+
 const SERVICE_ICONS = {
-    'virtual-assistance':  '🗂️',
-    'graphic-design':      '🎨',
-    'customer-service':    '💬',
-    'data-analysis':       '📊',
-    'frontend-development':'💻',
-    'python-programming':  '🐍',
+    
+    'AI & work automation':    '⛑️',
+    'data-analysis':           '📊',
+    'frontend web-development':'💻',
+    'python-programming':      '🐍',
+    'graphic-design':          '🎨',
+    'virtual-assistance':      '🗂️',
+    'customer-service':        '💬'
 };
 
 function initSkillsAndServices() {
@@ -160,41 +150,142 @@ function initSkillsAndServices() {
         .catch(() => {
             // Inline fallback (mirrors the uploaded skills.json)
             const fallback = {
+                "ai-automation": {
+                    "name": "AI & workflow automation",
+                    "proficiency": "95%",
+                    "description": "Smart AI agents, custom API integrations, and automated workflows that eliminate manual work.",
+                    "capabilities": [
+                        "Workflow automation", "AI agent integration", "API connections", 
+                        "Make.com / Zapier setups", "Custom chatbots", "LLM implementation", 
+                        "Process optimization", "Automated email flows", "Data pipeline automation", 
+                        "CRM workflow sync", "AI-powered data extraction", "Scheduled tasks", 
+                        "Webhook integration", "No-code / low-code automation"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
+                },
+
                 "virtual-assistance": {
-                    name: "virtual assistance",
-                    proficiency: "94%",
-                    description: "End-to-end admin, inbox, calendar, CRM and operations support so you focus on growth.",
-                    capabilities: ["Administrative support","Calendar management","Email management","Appointment booking","Customer support","Data entry","Internet research","Travel planning","CRM management","Lead generation","Project coordination","Executive assistance","Task management"]
+                    "name": "virtual assistance",
+                    "proficiency": "99%",
+                    "description": "End-to-end admin, inbox, calendar, CRM and operations support so you focus on growth.",
+                    "capabilities": [
+                        "Administrative support", "Calendar & schedule management", 
+                        "Email management", "Appointment booking", "Customer support", 
+                        "Data entry", "Internet research", "Travel planning", 
+                        "File & document organization", "Social media management", 
+                        "CRM management", "Lead generation", "Project coordination", 
+                        "Meeting scheduling", "Chat & email support", "Executive assistance", 
+                        "Inbox management", "Microsoft Office Suite", "Google Workspace", 
+                        "Communication management", "Task management", "Online business support", 
+                        "E-commerce support", "Report preparation", "Virtual team coordination", 
+                        "Client relationship management"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 },
+
                 "graphic-design": {
-                    name: "graphic design",
-                    proficiency: "84%",
-                    description: "Logos, brand identity, social graphics, thumbnails and marketing assets that convert.",
-                    capabilities: ["Logo design","Banner design","Social media graphics","YouTube thumbnails","Brand identity","Presentation design","Infographics","Video editing","Photo editing","Marketing materials"]
+                    "name": "graphic design",
+                    "proficiency": "95%",
+                    "description": "Logos, brand identity, social graphics, thumbnails and marketing assets that convert.",
+                    "capabilities": [
+                        "Ul mockups", "Logo design", "Banner design", "Social media graphics", 
+                        "YouTube thumbnails", "Business cards", "Flyers & posters", 
+                        "Letterhead design", "Brand identity", "Presentation design", 
+                        "Infographics", "Video editing", "Photo editing", 
+                        "Marketing materials", "Creative ad graphics" 
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 },
+
                 "customer-service": {
-                    name: "customer service",
-                    proficiency: "96%",
-                    description: "Empathic, professional chat / email / call support that keeps customers loyal.",
-                    capabilities: ["Customer communication","Client support","Problem resolution","Chat support","Email support","Conflict resolution","CRM tools","Customer retention","Technical support assistance"]
+                    "name": "customer service",
+                    "proficiency": "99%",
+                    "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
+                    "capabilities": [
+                        "Customer communication", "Technical support assistance", "Problem resolution",
+                        "Call handling", "Chat support", "Email support",
+                        "Conflict resolution", "CRM tools", "Customer retention",
+                        "Professional communication", "Multitasking"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 },
+
                 "data-analysis": {
-                    name: "data analysis & reporting",
-                    proficiency: "95%",
-                    description: "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
-                    capabilities: ["Advanced Excel","Data cleaning","Data visualization","Dashboard creation","Python for data","Financial reporting","Spreadsheet automation","SQL basics","Power BI / Tableau","KPI tracking"]
+                    "name": "data analysis & reporting",
+                    "proficiency": "98%",
+                    "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
+                    "capabilities": [
+                        "Advanced Excel", "Data cleaning", "Data visualization", 
+                        "Dashboard creation", "Python for data analysis",
+                        "QuickBooks", "Financial reporting", 
+                        "Spreadsheet automation", "SQL basics", 
+                        "Data reporting", "Business insights", 
+                        "Statistical analysis", "Power BI / Tableau", 
+                        "KPI tracking", "Reporting automation"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 },
+
                 "frontend-development": {
-                    name: "frontend development",
-                    proficiency: "90%",
-                    description: "Pixel-perfect, fast, responsive React + Tailwind websites and landing pages.",
-                    capabilities: ["HTML5","CSS3","JavaScript","React.js","Tailwind CSS","Bootstrap","Responsive design","API integration","Website optimization","Git & GitHub"]
+                    "name": "frontend development",
+                    "proficiency": "90%",
+                    "description": "Pixel-perfect, fast, responsive React + Tailwind websites and landing pages.",
+                    "capabilities": [
+                        "HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS", 
+                        "Bootstrap", "Responsive web design", "UI/UX implementation", 
+                        "API integration", "Website optimization", "Landing pages", 
+                        "Portfolio websites", "Business websites", "Interactive interfaces", 
+                        "Git & GitHub"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 },
+
                 "python-programming": {
-                    name: "python programming",
-                    proficiency: "85%",
-                    description: "Scripts, web scraping, data pipelines and APIs that save hours every week.",
-                    capabilities: ["Automation scripts","Data processing","Web scraping","REST APIs","Backend scripting","Flask / Django basics","Task automation","File handling"]
+                    "name": "python programming",
+                    "proficiency": "99%",
+                    "description": "Scripts, web scraping, data pipelines and APIs that save hours every week.",
+                    "capabilities": [
+                        "Automation scripts", "Data processing", "Web scraping", 
+                        "REST APIS", "Backend scripting", "Python applications", 
+                        "Data analytics", "Task automation", "File handling", 
+                        "Flask / Django basics", "Problem solving with Python"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
                 }
             };
             renderSkillsAndServices(fallback);
@@ -273,9 +364,8 @@ function renderServiceCards(skills) {
     });
 }
 
-/* ─────────────────────────────────────────
-   6. PORTFOLIO
-───────────────────────────────────────── */
+/* 6. PORTFOLIO */
+
 const PORTFOLIO_ITEMS = [
     {
         title: "E-Commerce Brand Identity",
@@ -371,17 +461,17 @@ function initPortfolio() {
     });
 }
 
-/* ─────────────────────────────────────────
-   7. CONTACT FORM
-───────────────────────────────────────── */
+/* 7. CONTACT FORM */ 
+
 /* =====================================================
    Contact Form — Email (Resend) + WhatsApp dual delivery
    Replace initContactForm() in script.js with this.
    ===================================================== */
 
-// ── Your WhatsApp number in international format, no + or spaces
+// WhatsApp number in international format (no + or spaces).
 // e.g. Kenyan number 0712 345 678 → 254712345678
-const WHATSAPP_NUMBER = '254750205940'; // ← replace with your real number
+
+const WHATSAPP_NUMBER = '254750205940';
 
 function initContactForm() {
     const form      = document.getElementById('contactForm');
@@ -408,6 +498,26 @@ function initContactForm() {
 
         setButtonLoading(submitBtn, true);
 
+        // Send Whatsapp message in a new tab - **DELETE WHEN I IMPLEMENT THE BELOW EMAIL/WHATSAPP SEND
+
+        const [whatsappResult] = await Promise.allSettled([
+            openWhatsApp(payload),  // non-blocking, opens new tab immediately
+        ]);
+
+        setButtonLoading(submitBtn, false);
+
+        if (whatsappResult.status === 'fulfilled') {
+            console.log(whatsappResult.status)
+            form.reset();
+            showFormSuccess(success, '✓ Message drafted! Check the WhatsApp tab to complete your enquiry.');
+        } else {
+            // Email failed but WhatsApp tab still opened — I'll add a useful fallback message
+            console.error('Whatsapp error:', whatsappResult.reason);
+        }
+    });
+}
+
+        /*
         // ── Run email + WhatsApp concurrently ──
         const [emailResult] = await Promise.allSettled([
             sendEmail(payload),
@@ -420,16 +530,16 @@ function initContactForm() {
             form.reset();
             showFormSuccess(success, '✓ Message sent! Check the WhatsApp tab to complete your enquiry.');
         } else {
-            // Email failed but WhatsApp tab still opened — give useful fallback message
+            // Email failed but WhatsApp tab still opened — I'll add a useful fallback message
             console.error('Email error:', emailResult.reason);
             showFormError(form, 'Email delivery failed — please complete your enquiry via the WhatsApp tab that just opened.');
         }
     });
 }
+*/
 
-/* ─────────────────────────────────────────
-   Email via /api/contact (Resend)
-───────────────────────────────────────── */
+// Email via /api/contact (Resend)
+/*
 async function sendEmail(payload) {
     const response = await fetch('/api/contact', {
         method: 'POST',
@@ -440,11 +550,10 @@ async function sendEmail(payload) {
     if (!response.ok) throw new Error(data.error || 'Email send failed.');
     return data;
 }
+*/
 
-/* ─────────────────────────────────────────
-   WhatsApp — builds wa.me deep link and
-   opens it in a new tab (fire-and-forget)
-───────────────────────────────────────── */
+// WhatsApp — builds wa.me deep link and opens it in a new tab (fire-and-forget)
+
 function openWhatsApp(payload) {
     const { name, email, service, message } = payload;
 
@@ -460,16 +569,30 @@ function openWhatsApp(payload) {
     ].filter(line => line !== null);
 
     const text = lines.join('\n');
-    const url  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    const whatsappUrl  = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
-    window.open(url, '_blank', 'noopener,noreferrer');
+    openPopup(whatsappUrl)
+
+    function openPopup(url, width = 500, height = 500) {
+        const left = (screen.width / 4) - (width / 2);
+        const top = (screen.height / 2) - (height / 2);
+        const features = `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,noopener,noreferrer`;
+        
+        try {
+            const popup = window.open(url, 'securePopup', features);
+        } catch (err) {
+            alert('Popup blocked. Opening whatsapp URL in new tab instead.');
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    }
+        
 
     return Promise.resolve(); // always succeeds from JS's perspective
 }
 
-/* ─────────────────────────────────────────
-   UI helpers
-───────────────────────────────────────── */
+
+//   UI helpers
+
 function setButtonLoading(btn, isLoading) {
     btn.disabled = isLoading;
     btn.innerHTML = isLoading
@@ -502,7 +625,7 @@ function showFormSuccess(el, msg) {
     setTimeout(() => {
         el.style.display = 'none';
         el.textContent = '';
-    }, 7000);
+    }, 20000);
 }
 
 function showFormError(form, message) {
@@ -534,10 +657,9 @@ function injectSpinnerStyle() {
     document.head.appendChild(style);
 }
 
-/* ─────────────────────────────────────────
-   8. CV DOWNLOAD BUTTONS
-───────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
+//   8. CV DOWNLOAD BUTTONS
+
+   document.addEventListener('DOMContentLoaded', () => {
     const handlers = ['downloadCvBtn', 'aboutDownloadBtn'];
     handlers.forEach(id => {
         const el = document.getElementById(id);
@@ -550,9 +672,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ─────────────────────────────────────────
-   9. SMOOTH SCROLL (for older browsers)
-───────────────────────────────────────── */
+//   9. SMOOTH SCROLL (for older browsers)
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
