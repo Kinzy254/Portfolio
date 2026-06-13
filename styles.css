@@ -744,6 +744,9 @@ section:last-of-type { border-bottom: none; }
 .portfolio-link:hover { gap: 0.6rem; }
 
 /* ── Contact ── */
+.contact-section {
+    background: var(--bg-alt2);
+}
 
 .contact-sub {
     color: var(--text-mid);
