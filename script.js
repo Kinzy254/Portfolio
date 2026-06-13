@@ -19,43 +19,69 @@ function initTypingEffect() {
     if (!introText) return;
 
     const phrases = [
-        "AI & Automation workflows", "workflow automation scripts", 
-        "modern dashboards/interfaces", "clean data insights",
-        "engaging websites", "landing pages that convert", 
-        "& provide technical virtual assistance", "excellent customer relations"
-        ];
-
+        "AI & Automation workflows",
+        "workflow automation scripts",
+        "modern dashboards/interfaces",
+        "clean data insights",
+        "engaging websites",
+        "landing pages that convert",
+        "technical virtual assistance",
+        "excellent customer relations"
+    ];
+    
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingTimer;
+    let startTimestamp = null;
+    let animationFrameId;
 
-    function type() {
-        const current = phrases[phraseIndex];
+    function type(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
 
-        if (isDeleting) {
-            introText.textContent = current.slice(0, charIndex - 1);
-            charIndex--;
-        } else {
-            introText.textContent = current.slice(0, charIndex + 1);
-            charIndex++;
+        const currentPhrase = phrases[phraseIndex];
+
+        // Determine current delay based on state
+        const delay = isDeleting ? 10 : 80;
+
+        if (elapsed >= delay) {
+            startTimestamp = timestamp; // Reset timer
+
+            if (isDeleting) {
+                introText.textContent = currentPhrase.slice(0, charIndex - 1);
+                charIndex--;
+            } else {
+                introText.textContent = currentPhrase.slice(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // State transitions
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                // Pause at the end of the word
+                startTimestamp = null; 
+                isDeleting = true;
+                cancelAnimationFrame(animationFrameId);
+                setTimeout(() => {
+                    animationFrameId = requestAnimationFrame(type);
+                }, 2200);
+                return; // Exit early to wait out the pause
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                // Pause before starting the next word
+                startTimestamp = null;
+                cancelAnimationFrame(animationFrameId);
+                setTimeout(() => {
+                    animationFrameId = requestAnimationFrame(type);
+                }, 350);
+                return; // Exit early to wait out the pause
+            }
         }
 
-        let delay = isDeleting ? 45 : 80;
-
-        if (!isDeleting && charIndex === current.length) {
-            delay = 2200; // pause at end
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            delay = 350;
-        }
-
-        typingTimer = setTimeout(type, delay);
+        animationFrameId = requestAnimationFrame(type);
     }
 
-    type();
+    animationFrameId = requestAnimationFrame(type);
 }
 
 /* 2. HAMBURGER MENU */

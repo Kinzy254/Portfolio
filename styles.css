@@ -76,7 +76,7 @@ input, select, textarea { font-family: inherit; }
     gap: 0.75rem;
     padding: 0 1.5rem;
     background: rgba(245,243,255,0.88);
-    background: linear-gradient(180deg, rgba(245, 243, 255, 0.88), rgba(245, 243, 255, 0.88), rgba(117, 91, 248, 0.88));
+    background: linear-gradient(180deg, rgba(245, 243, 255, 0.88), rgba(245, 243, 255, 0.88), rgba(217, 211, 247, 0.88));
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
 }
@@ -245,7 +245,7 @@ input, select, textarea { font-family: inherit; }
 /* ── Section Shared ── */
 section {
     padding: 4rem 3.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
 }
 section:last-of-type { border-bottom: none; }
 
@@ -491,7 +491,7 @@ section:last-of-type { border-bottom: none; }
 
 /* ── About ── */
 .about-me {
-    background: var(--bg-alt);
+    background: linear-gradient(180deg, var(--bg-page), var(--bg-alt), var(--bg-page));
     display: block;
 }
 
@@ -512,6 +512,10 @@ section:last-of-type { border-bottom: none; }
 }
 
 /* ── Skills ── */
+.skills-section {
+    background: linear-gradient(180deg, var(--bg-page), var(--bg-alt3));
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -589,7 +593,7 @@ section:last-of-type { border-bottom: none; }
 
 /* ── Services ── */
 .services-section {
-    background: linear-gradient(135deg, var(--bg-alt3), var(--bg-alt2));
+    background: linear-gradient(180deg, var(--bg-alt3), 10%, var(--bg-alt), var(--bg-page));
 }
 
 .services-grid {
@@ -643,6 +647,10 @@ section:last-of-type { border-bottom: none; }
 }
 
 /* ── Portfolio ── */
+.portfolio-section {
+    background: var(--bg-page);
+}
+
 .portfolio-filter {
     display: flex;
     flex-wrap: wrap;
@@ -734,7 +742,7 @@ section:last-of-type { border-bottom: none; }
 
 /* ── Contact ── */
 .contact-section {
-    background: var(--bg-alt2);
+    background: linear-gradient(180deg, var(--bg-page), 10%, var(--bg-alt));
 }
 
 .contact-sub {
