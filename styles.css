@@ -22,7 +22,7 @@
     --bg-card:              #ffffff;
     --bg-sidebar:           #1a1030;
     --bg-alt:               #d6eeff;
-    --bg-alt2:              #ede0ff;
+    --bg-alt2:              #d6f8ef;
     --bg-alt3:              #fcf8ef;
 
     --text-dark:            #1c1530;
@@ -745,7 +745,7 @@ section:last-of-type { border-bottom: none; }
 
 /* ── Contact ── */
 .contact-section {
-    background: linear-gradient(180deg, var(--bg-page), 10%, var(--bg-alt));
+    background: linear-gradient(180deg, var(--bg-page), 10%, var(--bg-alt2));
 }
 
 .contact-sub {
