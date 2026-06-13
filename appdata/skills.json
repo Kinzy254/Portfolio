@@ -26,6 +26,27 @@
             }]
         },
 
+        "data-analysis": {
+            "name": "data analysis & reporting",
+            "proficiency": "98%",
+            "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
+            "capabilities": [
+                "Advanced Excel", "Data cleaning", "Data visualization", 
+                "Dashboard creation", "Python for data analysis",
+                "QuickBooks", "Financial reporting", 
+                "Spreadsheet automation", "SQL basics", 
+                "Data reporting", "Business insights", 
+                "Statistical analysis", "Power BI / Tableau", 
+                "KPI tracking", "Reporting automation"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
         "virtual-assistance": {
             "name": "virtual assistance",
             "proficiency": "99%",
@@ -69,45 +90,6 @@
             }]
         },
 
-        "customer-service": {
-            "name": "customer service",
-            "proficiency": "99%",
-            "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
-            "capabilities": [
-                "Customer communication", "Technical support assistance", "Problem resolution",
-                "Call handling", "Chat support", "Email support",
-                "Conflict resolution", "CRM tools", "Customer retention",
-                "Professional communication", "Multitasking"
-            ],
-            "porfolio": [{
-                "title": "",
-                "description": "",
-                "stack": [],
-                "link": ""
-            }]
-        },
-
-        "data-analysis": {
-            "name": "data analysis & reporting",
-            "proficiency": "98%",
-            "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
-            "capabilities": [
-                "Advanced Excel", "Data cleaning", "Data visualization", 
-                "Dashboard creation", "Python for data analysis",
-                "QuickBooks", "Financial reporting", 
-                "Spreadsheet automation", "SQL basics", 
-                "Data reporting", "Business insights", 
-                "Statistical analysis", "Power BI / Tableau", 
-                "KPI tracking", "Reporting automation"
-            ],
-            "porfolio": [{
-                "title": "",
-                "description": "",
-                "stack": [],
-                "link": ""
-            }]
-        },
-
         "frontend-development": {
             "name": "frontend development",
             "proficiency": "90%",
@@ -136,6 +118,24 @@
                 "REST APIS", "Backend scripting", "Python applications", 
                 "Data analytics", "Task automation", "File handling", 
                 "Flask / Django basics", "Problem solving with Python"
+            ],
+            "porfolio": [{
+                "title": "",
+                "description": "",
+                "stack": [],
+                "link": ""
+            }]
+        },
+
+        "customer-service": {
+            "name": "customer service",
+            "proficiency": "99%",
+            "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
+            "capabilities": [
+                "Customer communication", "Technical support assistance", "Problem resolution",
+                "Call handling", "Chat support", "Email support",
+                "Conflict resolution", "CRM tools", "Customer retention",
+                "Professional communication", "Multitasking"
             ],
             "porfolio": [{
                 "title": "",

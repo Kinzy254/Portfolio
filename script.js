@@ -157,9 +157,9 @@ function initReveal() {
 
 const SERVICE_ICONS = {
     
-    'AI & work automation':    '⛑️',
+    'ai-automation':           '✦',
     'data-analysis':           '📊',
-    'frontend web-development':'💻',
+    'frontend-development':    '🌐',
     'python-programming':      '🐍',
     'graphic-design':          '🎨',
     'virtual-assistance':      '🗂️',
@@ -181,11 +181,32 @@ function initSkillsAndServices() {
                     "proficiency": "95%",
                     "description": "Smart AI agents, custom API integrations, and automated workflows that eliminate manual work.",
                     "capabilities": [
-                        "Workflow automation", "AI agent integration", "API connections", 
-                        "Make.com / Zapier setups", "Custom chatbots", "LLM implementation", 
-                        "Process optimization", "Automated email flows", "Data pipeline automation", 
-                        "CRM workflow sync", "AI-powered data extraction", "Scheduled tasks", 
-                        "Webhook integration", "No-code / low-code automation"
+                            "Workflow automation", "AI agent integration", "API connections", 
+                            "Make.com / Zapier setups", "Custom chatbots", "LLM implementation", 
+                            "Process optimization", "Automated email flows", "Data pipeline automation", 
+                            "CRM workflow sync", "AI-powered data extraction", "Scheduled tasks", 
+                            "Webhook integration", "No-code / low-code automation"
+                        ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
+                },
+
+                "data-analysis": {
+                    "name": "data analysis & reporting",
+                    "proficiency": "98%",
+                    "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
+                    "capabilities": [
+                        "Advanced Excel", "Data cleaning", "Data visualization", 
+                        "Dashboard creation", "Python for data analysis",
+                        "QuickBooks", "Financial reporting", 
+                        "Spreadsheet automation", "SQL basics", 
+                        "Data reporting", "Business insights", 
+                        "Statistical analysis", "Power BI / Tableau", 
+                        "KPI tracking", "Reporting automation"
                     ],
                     "porfolio": [{
                         "title": "",
@@ -238,45 +259,6 @@ function initSkillsAndServices() {
                     }]
                 },
 
-                "customer-service": {
-                    "name": "customer service",
-                    "proficiency": "99%",
-                    "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
-                    "capabilities": [
-                        "Customer communication", "Technical support assistance", "Problem resolution",
-                        "Call handling", "Chat support", "Email support",
-                        "Conflict resolution", "CRM tools", "Customer retention",
-                        "Professional communication", "Multitasking"
-                    ],
-                    "porfolio": [{
-                        "title": "",
-                        "description": "",
-                        "stack": [],
-                        "link": ""
-                    }]
-                },
-
-                "data-analysis": {
-                    "name": "data analysis & reporting",
-                    "proficiency": "98%",
-                    "description": "Clean data, beautiful dashboards, KPI tracking and clear business insights.",
-                    "capabilities": [
-                        "Advanced Excel", "Data cleaning", "Data visualization", 
-                        "Dashboard creation", "Python for data analysis",
-                        "QuickBooks", "Financial reporting", 
-                        "Spreadsheet automation", "SQL basics", 
-                        "Data reporting", "Business insights", 
-                        "Statistical analysis", "Power BI / Tableau", 
-                        "KPI tracking", "Reporting automation"
-                    ],
-                    "porfolio": [{
-                        "title": "",
-                        "description": "",
-                        "stack": [],
-                        "link": ""
-                    }]
-                },
-
                 "frontend-development": {
                     "name": "frontend development",
                     "proficiency": "90%",
@@ -305,6 +287,24 @@ function initSkillsAndServices() {
                         "REST APIS", "Backend scripting", "Python applications", 
                         "Data analytics", "Task automation", "File handling", 
                         "Flask / Django basics", "Problem solving with Python"
+                    ],
+                    "porfolio": [{
+                        "title": "",
+                        "description": "",
+                        "stack": [],
+                        "link": ""
+                    }]
+                },
+
+                "customer-service": {
+                    "name": "customer service",
+                    "proficiency": "99%",
+                    "description": "Empathic, professional chat / email / call support that keeps customers loyal.",
+                    "capabilities": [
+                        "Customer communication", "Technical support assistance", "Problem resolution",
+                        "Call handling", "Chat support", "Email support",
+                        "Conflict resolution", "CRM tools", "Customer retention",
+                        "Professional communication", "Multitasking"
                     ],
                     "porfolio": [{
                         "title": "",
@@ -685,14 +685,32 @@ function injectSpinnerStyle() {
 
 //   8. CV DOWNLOAD BUTTONS
 
-   document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const handlers = ['downloadCvBtn', 'aboutDownloadBtn'];
+    const cvUrl = 'appdata/CV - Charles Kinzi.pdf'; 
+
     handlers.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
-            el.addEventListener('click', e => {
+            // Changed to an async function to allow 'await' for the server check
+            el.addEventListener('click', async (e) => {
                 e.preventDefault();
-                alert('CV download will be available once the file is linked. Update the href to your CV URL.');
+                
+                try {
+                    // Send a lightweight HEAD request to verify file existence
+                    const response = await fetch(cvUrl, { method: 'HEAD' });
+                    
+                    if (response.ok) {
+                        // File exists (Status 200-299), safe to open
+                        window.open(cvUrl, '_blank');
+                    } else {
+                        // File missing on server (Status 404, etc.)
+                        alert('CV is being updated. Check back later.');
+                    }
+                } catch (error) {
+                    // Handles network dropouts or local CORS blocks during testing
+                    alert('CV is being updated. Check back later.');
+                }
             });
         }
     });
